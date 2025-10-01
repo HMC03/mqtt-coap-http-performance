@@ -65,7 +65,7 @@ Verified that the server is running by opening your browser and navigating to th
 http://localhost:8000/
 ```
 
-## Run
+#### Run the client
 ```bash
 # Change to the http directory
 cd src/http
