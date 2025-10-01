@@ -29,6 +29,17 @@ mqtt-coap-http-performance/
 
 Install dependencies:
 ```bash
+# install python virtual environment
+sudo apt install python3-venv -y
+
+# create a venv in the project
+python3 -m venv venv
+
+# activate venv
+source venv/bin/activate   # Linux/macOS
+# venv\Scripts\activate    # Windows
+
+# install required Python packages
 pip install -r requirements.txt
 ```
 
