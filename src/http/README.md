@@ -52,9 +52,9 @@ cd src/http
 touch .env
 
 # Add the following lines to your .env file
-# Note: Make sure it start with "http://" and end with "/".
-# Note: Verify the port number is correct.
-SERVER_URL={your_server_url}
+# Note: Verify the ip and port number is correct.
+SERVER_HOST={your_server_host}
+SERVER_PORT={your_server_port}
 ```
 
 ### Running the program

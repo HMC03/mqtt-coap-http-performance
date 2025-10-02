@@ -4,7 +4,8 @@ import os
 import time
 
 load_dotenv(".env")
-SERVER_URL = os.getenv("SERVER_URL")
+SERVER_HOST = os.getenv("SERVER_HOST")
+SERVER_PORT = os.getenv("SERVER_PORT")
 
 def get_data(url):
     response = requests.get(url)
@@ -20,9 +21,8 @@ if __name__ == "__main__":
 
     for nums in range(100):
         start = time.time()
-        data = get_data(f"http://{SERVER_URL}{file}")
+        data = get_data(f"http://{SERVER_HOST}:{SERVER_PORT}/{file}")
         if data:
-            print("Hit")
             print(f"Epoch: {nums} -- Time elapsed: {time.time() - start} seconds")
         else:
             print("Miss")
