@@ -71,6 +71,6 @@ http://localhost:8000/
 cd src/http
 
 # Run the program
-python client.py
+python http_client.py
 ```
 
