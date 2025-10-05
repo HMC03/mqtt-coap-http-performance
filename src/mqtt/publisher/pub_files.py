@@ -5,7 +5,6 @@ import struct
 
 BROKER = os.environ.get("MQTT_BROKER", "localhost")
 TOPIC_BASE = "files"
-QOS = 1
 EXPERIMENTS = {
     "100B":  {"iterations": 10000, "pause": 0.01},
     "10KB":  {"iterations": 1000,  "pause": 0.05},
@@ -24,28 +23,40 @@ print("Connecting to broker")
 client.connect(BROKER, 1883, 60)
 client.loop_start()
 
-for file_name, config in EXPERIMENTS.items():
-    n_iter = config["iterations"]
-    pause = config["pause"]
+while True:
+    qos_input = input("\nEnter QoS level (0, 1, or 2) or 'q' to quit: ").strip().lower()
+    if qos_input == 'q':
+        break
+    if qos_input not in ('0', '1', '2'):
+        print("Invalid input. Please enter 0, 1, 2, or q.")
+        continue
 
-    path = os.path.join(FILES_DIR, file_name)
-    with open(path, "rb") as f:
-        file_bytes = f.read()
+    QOS = int(qos_input)
+    print(f"\nStarting experiment run with QoS = {QOS}")
 
-    topic = f"{TOPIC_BASE}/{file_name}"  # topic per file only
+    for file_name, config in EXPERIMENTS.items():
+        n_iter = config["iterations"]
+        pause = config["pause"]
 
-    for i in range(n_iter):
-        t_send = time.perf_counter()
-        # Pack timestamp (8 bytes) + iteration (4 bytes) + file bytes
-        payload = struct.pack("dI", t_send, i) + file_bytes
+        path = os.path.join(FILES_DIR, file_name)
+        with open(path, "rb") as f:
+            file_bytes = f.read()
 
-        info = client.publish(topic, payload, qos=QOS)
-        info.wait_for_publish()
+        topic = f"{TOPIC_BASE}/{file_name}"
 
-        print(t_send, "Sent", file_name, i)
-        time.sleep(pause)
+        for i in range(n_iter):
+            t_send = time.perf_counter()
+            payload = struct.pack("dI", t_send, i) + file_bytes
 
-print("Publisher done sending all files.")
+            info = client.publish(topic, payload, qos=QOS)
+            info.wait_for_publish()
+            print(f"{t_send:.6f} Sent {file_name} iter {i}")
 
+            time.sleep(pause)
+
+    print(f"Finished all experiments for QoS = {QOS}")
+
+print("\nGracefully disconnecting...")
 client.loop_stop()
 client.disconnect()
+print("Publisher stopped cleanly.")
