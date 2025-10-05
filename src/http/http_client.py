@@ -43,7 +43,6 @@ def get_data(host, port, file_path):
         if b"200 OK" in response_data[:100]:
             return response_data, elapsed, total_bytes_received
         else:
-            print("Transfer failed.")
             return None, 0, 0
     except Exception as e:
         print(f"Error: {e}")
@@ -52,6 +51,7 @@ def get_data(host, port, file_path):
         sock.close()
 
 def get_file_size(file_name):
+    # File sizes were based on the given files in /files/ in root directory of repo.   
     if file_name == "100B":
         return 100
     elif file_name == "10kB":
@@ -96,8 +96,6 @@ if __name__ == "__main__":
         "1MB": 100,
         "10MB": 10,
     }
-
-    print(get_file_size("10MB"))
 
     print(f"{'='*60}")
     print(f"Files to be transferred: {files}")
