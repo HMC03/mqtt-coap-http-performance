@@ -1,4 +1,4 @@
-## Laptop 1
+# Broker
 
 ## Setup
 * Install MQTT mosquitto
