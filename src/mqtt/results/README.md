@@ -34,8 +34,6 @@ Example output:
 ```yaml
 === MQTT Throughput Summary (Aggregated Results) ===
 
-=== MQTT Throughput Summary (Aggregated Results) ===
-
 mqtt_results_qos1_20251005_190246.csv Results:
 File Name                    Avg Throughput (kB/s)      Std Dev (kB/s)       Avg (Payload/File)
 -----------------------------------------------------------------------------------------------
@@ -65,6 +63,6 @@ Analysis complete.
 
 
 ## Notes
-* each run of the subscriber script creates a new timestamped .csv file
+* Each run of the subscriber script creates a new timestamped .csv file
 * You can safely delete old result files once analyzed
 * The script automatically processes all .csv files found in the directory.
