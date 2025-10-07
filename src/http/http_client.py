@@ -54,7 +54,7 @@ def get_file_size(file_name):
     # File sizes were based on the given files in /files/ in root directory of repo.   
     if file_name == "100B":
         return 100
-    elif file_name == "10kB":
+    elif file_name == "10KB":
         return 10240
     elif file_name == "1MB":
         return 1048576
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     # Dictionary (key: file name, value: number of iterations)
     files = {
         "100B": 10000,
-        "10kB": 1000,
+        "10KB": 1000,
         "1MB": 100,
         "10MB": 10,
     }
