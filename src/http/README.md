@@ -4,15 +4,15 @@
 This module contains the implementation of the HTTP protocol. 
 Using the http.server library from Python, we can use a one-liner command to start a server.
 
-The client is also implemented with Python. 
-We will use the requests library to make HTTP request to the server and download the file from the server.
-A timer will measure the time taken to download the file and calculate the throughput after all iterations.
+The client is also implemented with Python.
+We will use the socket library to make HTTP request to the server and download the file from the server.
+THe socket library also helps to track the total bytes downloaded for calculating the overhead ratios.
+A standard timer will measure the time taken to download the file and calculate the throughput after all iterations.
 
 ## Build and Compile
 
 ### Prerequisites
 - Python 3.x
-- requests>=2.22.0
 - python-dotenv>=0.10.3
 - venv>=0.21.1
 
@@ -36,10 +36,12 @@ pip install -r requirements.txt
 ```
 
 #### Start your http server
-Before starting the HTTP Server, make sure you are in the **root directory** of the project. 
+Before starting the HTTP Server, make sure you are in the **root directory** of the project.
+The root directory should contain the **files** directory.
 Also, make sure you have **activated your virtual environment**.
 ```bash
 # Feel free to change the port number.
+# Note: Change the port number if this port is occupied.
 python -m http.server 8000 --directory ./files
 ```
 
@@ -52,7 +54,8 @@ cd src/http
 touch .env
 
 # Add the following lines to your .env file
-# Note: Verify the ip and port number is correct.
+# Note: Change the host and port number if http server is running on a different computer.
+# Note: This code is much easier to run on a local network.
 SERVER_HOST={your_server_host}
 SERVER_PORT={your_server_port}
 ```
@@ -61,6 +64,7 @@ SERVER_PORT={your_server_port}
 Verified that the server is running by opening your browser and navigating to the server url.
 ```bash
 # You can either use your local ip address or "localhost".
+# Note: Ensured you are on the computer hosting the server.
 # Note: Change the port number if you changed it in the previous step.
 http://localhost:8000/
 ```
