@@ -104,12 +104,12 @@ Detailed instructions and commands are provided in the corresponding directories
   </tr>
   <tr>
     <td><b>CoAP</b></td>
-    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+    <td>123.71</td> <td>81.75</td> <td>3739.17</td> <td>1320.94</td> <td>5573.78</td> <td>434.95</td>
+    <td>3526.77</td> <td>NaN</td> <td>1.2</td> <td>1.002</td> <td>1</td> <td>1</td>
   </tr>
   <tr>
     <td><b>HTTP</b></td>
-    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+    <td>717.32</td> <td>353.64</td> <td>85541.08</td> <td>41840.15</td> <td>926734.24</td> <td>430755.59</td>
+    <td>188836.68</td> <td>42101.5</td> <td>3.01</td> <td>1.0198</td> <td>1</td> <td>1</td>
   </tr>
 </table>
