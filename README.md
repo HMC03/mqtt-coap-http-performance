@@ -26,6 +26,7 @@ mqtt-coap-http-performance/
     * Python 3.x
     * Eclipse Mosquitto (MQTT broker)
     * paho-mqtt (MQTT client)
+    * aiocoap (Coap)
 
 Install dependencies:
 ```bash
