@@ -69,17 +69,6 @@ Detailed instructions and commands are provided in the corresponding directories
 
 ## Results
 
-|  | Throughput (in kilo bits per second) |  |  |  |  |  |  |  | Total application layer data transferred from sender to receiver (including header content) per file divided by the file size |  |  |   |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|  | 100B file |  | 10kB file |  | 1MB file |  | 10MB file |  | 100B file | 10kB file | 1MB file | 10MB file  |
-|  | Average  | Std. Dev. | Average  | Std. Dev. | Average  | Std. Dev. | Average  | Std. Dev. | Average  | Average  | Average  | Average   |
-| MQTT QoS1 | 52.36 | 11.24 | 2510.13 | 659.81 | 6077.99 | 2049.07 | 8857.61 | 1689.75 | 1.12 | 1.0012 | 1 | 1  |
-| MQTT QoS2 | 18.67 | 6.93 | 1495.44 | 275.98 | 6918.71 | 2227.28 | 5763.7 | 752.51 | 1.12 | 1.0012 | 1 | 1  |
-| CoAP |  |  |  |  |  |  |  |  |  |  |  |   |
-| HTTP |  |  |  |  |  |  |  |  |  |  |  |   |
-
-<h3>Performance Comparison</h3>
-
 <table>
   <tr>
     <th rowspan="3">Protocol</th>
