@@ -1,103 +1,60 @@
-\## CoAP Server
+## CoAP Server
 
-\## Setup
+## Setup
 
-* Change working directory where the CoAP files are saved:
+* Change the directory of COAP, if it hasn't already been cloned:
 
-```
-
-cd C:\\Users\\archi\\Downloads\\DataFiles
-
+```bash
+cd src/coap
 ```
 
 * Create a new isolated python environment:
 
-```
-
-python -m venv coap\_env
-
+```bash
+# Note: Preferably, you would be in your project root directory.
+python -m venv .venv
 ```
 
 * Activate the virtual environment so the installed libraries apply only inside it:
 
-```
-
-coap\_env\\Scripts\\activate
-
+```bash
+source .venv/bin/activate
 ```
 
 * Install the aiocoap library inside the virtual environment to enable CoAP protocol functionality:
 
-```
-
+```bash
 pip install aiocoap
-
 ```
 
 * Run the CoAP server python script that listens for and responds to CoAP requests:
 
+```bash
+# Note: Change to the coap directory
+cd src/coap
+
+# Run the server script
+python3 coap_server.py
 ```
 
-C:\\Users\\archi\\Downloads\\DataFiles\\coap\_server.py
+## CoAP Client
 
-```
-
-\## CoAP Client
-
-\## Setup
-
-* Move into the project folder where CoAP files are stored:
-
-```
-
-cd C:\\Users\\archi\\Downloads\\DataFiles
-
-```
-
-* Activate the virtual Python environment to use the installed aiocoap library:
-
-```
-
-coap\_env\\Scripts\\activate
-
-```
+## Setup
 
 * Run the CoAP client script to request files from the server and log transfer times and throughputs:
 
+```bash
+# Note: Make sure you are still in the coap directory
+python3 coap_client_logging.py
 ```
 
-python coap\_client\_logging.py
-
-```
-
-
-
-\## CoAP Results
-
-\## Setup
-
-* Open project folder containing all CoAP files:
-
-```
-
-cd C:\\Users\\archi\\Downloads\\DataFiles
-
-```
-
-* Activate the virtual environment:
-
-```
-
-coap\_env\\Scripts\\activate
-
-```
+## CoAP Results
 
 * Run the analysis script:
 
-```
-
-python coap\_analyze\_results.py
-
+```bash
+# Note: Again, make sure your virtual environment is activated and you are in the coap directory.
+python3 coap_analyze_results.py
 ```
 
 
