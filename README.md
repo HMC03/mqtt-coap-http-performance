@@ -77,3 +77,54 @@ Detailed instructions and commands are provided in the corresponding directories
 | MQTT QoS2 | 18.67 | 6.93 | 1495.44 | 275.98 | 6918.71 | 2227.28 | 5763.7 | 752.51 | 1.12 | 1.0012 | 1 | 1  |
 | CoAP |  |  |  |  |  |  |  |  |  |  |  |   |
 | HTTP |  |  |  |  |  |  |  |  |  |  |  |   |
+
+<h3>Performance Comparison</h3>
+
+<table>
+  <tr>
+    <th rowspan="3">Protocol</th>
+    <th colspan="8">Throughput (kbps)</th>
+    <th colspan="4">Total Application Layer Data Transferred / File Size</th>
+  </tr>
+  <tr>
+    <th colspan="2">100B File</th>
+    <th colspan="2">10kB File</th>
+    <th colspan="2">1MB File</th>
+    <th colspan="2">10MB File</th>
+    <th>100B File</th>
+    <th>10kB File</th>
+    <th>1MB File</th>
+    <th>10MB File</th>
+  </tr>
+  <tr>
+    <th>Avg</th><th>Std. Dev.</th>
+    <th>Avg</th><th>Std. Dev.</th>
+    <th>Avg</th><th>Std. Dev.</th>
+    <th>Avg</th><th>Std. Dev.</th>
+    <th>Avg</th><th>Avg</th><th>Avg</th><th>Avg</th>
+  </tr>
+  <tr>
+    <td><b>MQTT QoS1</b></td>
+    <td>52.36</td><td>11.24</td>
+    <td>2510.13</td><td>659.81</td>
+    <td>6077.99</td><td>2049.07</td>
+    <td>8857.61</td><td>1689.75</td>
+    <td>1.12</td><td>1.0012</td><td>1</td><td>1</td>
+  </tr>
+  <tr>
+    <td><b>MQTT QoS2</b></td>
+    <td>18.67</td><td>6.93</td>
+    <td>1495.44</td><td>275.98</td>
+    <td>6918.71</td><td>2227.28</td>
+    <td>5763.7</td><td>752.51</td>
+    <td>1.12</td><td>1.0012</td><td>1</td><td>1</td>
+  </tr>
+  <tr>
+    <td><b>CoAP</b></td>
+    <td colspan="12"></td>
+  </tr>
+  <tr>
+    <td><b>HTTP</b></td>
+    <td colspan="12"></td>
+  </tr>
+</table>
